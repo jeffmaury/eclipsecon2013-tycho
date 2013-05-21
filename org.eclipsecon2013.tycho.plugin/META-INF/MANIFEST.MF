@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tycho sample plugin
+Bundle-SymbolicName: org.eclipsecon2013.tycho.plugin; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Jeff MAURY
+Require-Bundle: org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
