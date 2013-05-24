@@ -87,6 +87,15 @@
             <target>1.5</target>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-surefire-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <configuration>
+            <useUIHarness>true</useUIHarness>
+            <useUIThread>false</useUIThread>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement> 
   </build>
@@ -100,7 +109,7 @@
         </property>
       </activation>
       <properties>
-        <tycho.test.jvmArgs>-Xmx800m -XX:MaxPermSize=256m</tycho.test.jvmArgs>
+        <tycho.testArgLine>-Xmx800m -XX:MaxPermSize=256m</tycho.testArgLine>
       </properties>
     </profile>
     <profile>
@@ -112,7 +121,7 @@
         </property>
       </activation>
       <properties>
-        <tycho.test.jvmArgs>-Xmx800m -XX:MaxPermSize=256m -Dosgi.ws=cocoa -XstartOnFirstThread</tycho.test.jvmArgs>
+        <tycho.testArgLine>-Xmx800m -XX:MaxPermSize=256m -Dosgi.ws=cocoa -XstartOnFirstThread</tycho.testArgLine>
         <osgi.ws>cocoa</osgi.ws>
       </properties>
     </profile>
