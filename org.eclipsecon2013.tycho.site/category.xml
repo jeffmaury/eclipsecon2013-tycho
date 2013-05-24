@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle url="plugins/org.eclipsecon2013.tycho.plugin_1.0.0.qualifier.jar" id="org.eclipsecon2013.tycho.plugin" version="1.0.0.qualifier">
+      <category name="org.eclipsecon3013.tycho"/>
+   </bundle>
+   <category-def name="org.eclipsecon3013.tycho" label="Tycho workshop"/>
+</site>

@@ -67,6 +67,7 @@
   <modules>
     <module>org.eclipsecon2013.tycho.plugin</module>
     <module>org.eclipsecon2013.tycho.plugin.tests</module>
+    <module>org.eclipsecon2013.tycho.site</module>
   </modules>
   <build>
     <plugins>
