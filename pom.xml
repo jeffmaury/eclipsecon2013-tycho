@@ -52,19 +52,8 @@
   <properties>
     <tycho-version>0.17.0</tycho-version>
   </properties>
-  <repositories>
-    <repository>
-      <id>indigo</id>
-      <url>http://download.eclipse.org/releases/indigo</url>
-      <layout>p2</layout>
-    </repository>
-    <repository>
-      <id>swtbot</id>
-      <url>http://download.eclipse.org/technology/swtbot/releases/latest</url>
-      <layout>p2</layout>
-    </repository>
-  </repositories>
   <modules>
+    <module>org.eclipsecon2013.tycho.target.e37</module>
     <module>org.eclipsecon2013.tycho.plugin</module>
     <module>org.eclipsecon2013.tycho.plugin.tests</module>
     <module>org.eclipsecon2013.tycho.site</module>
@@ -101,6 +90,13 @@
               <arch>x86_64</arch>
             </environment>
           </environments>
+          <target>
+            <artifact>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>${project.groupId}.target.${target-platform}</artifactId>
+              <version>${project.version}</version>
+            </artifact>
+          </target>
         </configuration>
       </plugin>
     </plugins>
@@ -128,6 +124,29 @@
     </pluginManagement> 
   </build>
   <profiles>
+    <profile>
+      <id>e37</id>
+      <activation>
+        <property>
+          <name>!target-profile</name>
+        </property>
+      </activation>
+      <properties>
+        <target-platform>e37</target-platform>
+      </properties>
+    </profile>
+    <profile>
+      <id>e42</id>
+      <activation>
+        <property>
+          <name>target-profile</name>
+          <value>e42</value>
+         </property>
+      </activation>
+      <properties>
+        <target-platform>e42</target-platform>
+      </properties>
+    </profile>
     <profile>
       <id>sun-jvm</id>
       <activation>
