@@ -2,6 +2,7 @@ package org.eclipsecon2013.tycho.plugin.actions;
 
 import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
 import org.eclipse.swtbot.swt.finder.junit.SWTBotJunit4ClassRunner;
+import org.eclipse.swtbot.swt.finder.widgets.SWTBotShell;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,5 +25,12 @@ public class SampleActionTest {
 	@Test
 	public void verifyThatSubMenuIsAvailable() {
 		bot.menu("Sample Menu").click().menu("Sample Action");
+	}
+	
+	@Test
+	public void verifyThatSubMenuLeadsToDialog() {
+		bot.menu("Sample Menu").click().menu("Sample Action").click();
+		SWTBotShell shell = bot.shell("Tycho sample plugin");
+		shell.bot().button("OK").click();
 	}
 }
