@@ -115,7 +115,7 @@
               <destFile>${sonar.jacoco.reportPath}</destFile>
               <append>true</append>
               <includes>
-                <include>org.eclipsecon2013.tycho</include>
+                <include>org.eclipsecon2013.tycho.*</include>
               </includes>
             </configuration>
           </execution>
