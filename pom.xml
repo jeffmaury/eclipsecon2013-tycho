@@ -51,6 +51,7 @@
   </developers>
   <properties>
     <tycho-version>0.17.0</tycho-version>
+    <sonar.jacoco.reportPath>../target/jacoco.exec</sonar.jacoco.reportPath>
   </properties>
   <modules>
     <module>org.eclipsecon2013.tycho.target.e37</module>
@@ -99,6 +100,26 @@
             </artifact>
           </target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.6.2.201302030002</version>
+        <executions>
+          <execution>
+            <id>prepare</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+            <configuration>
+              <destFile>${sonar.jacoco.reportPath}</destFile>
+              <append>true</append>
+              <includes>
+                <include>org.eclipsecon2013.tycho</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
     <pluginManagement>
